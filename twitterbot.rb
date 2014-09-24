@@ -6,16 +6,16 @@ while true
 		# authenticate it for your account
 		# fill in the following
 		config = {
-			consumer_key:        'YmxJ2JJXFVnYtJtx17iTBzEcS',
-			consumer_secret:     'C3Rdk4AqZAVfop4ksyNU29Li3iHXitRuGUxtY6wIec0j75w8t',
-			access_token:        '2546510839-HRmohibBZCdTkraDtkp6Ps2NrEAnmZiOfWYK65P',
-			access_token_secret: 'H6Nur9kM2xnQBtfqMTjMp8eJ3E1ykAiXMKjE3qQf4Dtr2'
+			consumer_key:        'rbMbrWYpPQHzjJqztrqthdrIH',
+			consumer_secret:     'N68ysVOyiPPKxaGbg277nZtBrM10l2PqqUNxWIXuLFWkVCQvuA',
+			access_token:        '2546510839-KgNWtNBrd4EUg6qaUKfe1Dj2qO4MMc2rsYWg9UW',
+			access_token_secret: 'n3lj6YuMn2hNsH460xsLhAfp5LHHFJLcUVITbdAin18NY'
 		}
 		rClient = Twitter::REST::Client.new config
 		sClient = Twitter::Streaming::Client.new(config)
 
 		# topics to watch
-		topics = ['douglas coupland', 'doug coupland', 'microserfs', 'genearation x']
+		topics = ['douglas coupland', 'doug coupland', 'microserfs', 'generation x']
 		sClient.filter(:track => topics.join(',')) do |tweet|
 			if tweet.is_a?(Twitter::Tweet)
 			  puts tweet.text 
